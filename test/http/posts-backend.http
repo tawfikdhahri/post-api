@@ -1,0 +1,75 @@
+
+
+@host = http://localhost:3002
+POST  {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"hello@gmail.com",
+  "password":"admin126"
+}
+
+### auth
+
+POST  {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email":"hello2@gmail.com",
+  "password":"Admin126",
+  "name":"tawfik",
+  "dateOfBirth":"2018-04-15"
+}
+
+### posts
+GET  {{host}}/api/posts
+Content-Type: application/json
+
+
+###
+POST  {{host}}/api/posts/create
+Content-Type: application/json
+
+{
+  "text":"tunis didnt pass the next step"
+}
+
+###
+POST  {{host}}/api/posts/63890bb6eb8f5ef6601283a2
+Content-Type: application/json
+
+{
+  "text":"hello gusyes we are happy to see you",
+  "date":"2018-04-20"
+}
+
+
+###
+DELETE   {{host}}/api/posts/63890bb6eb8f5ef6601283a2
+Content-Type: application/json
+
+
+### comments
+
+POST  {{host}}/api/comments/create
+Content-Type: application/json
+
+{ 
+  "author":"638a128eb51397d5ff20e98a",
+  "postId":"638a15310c8f4fb6ea789940",
+  "text":"hello world"
+}
+
+### 
+
+POST  {{host}}/api/comments/reaction
+Content-Type: application/json
+
+{ 
+  "comment":"638a1d9ea8600ebb3c1d5a75",
+  "type":"like"
+}
+###
+GET  {{host}}/api/comments/638a128eb51397d5ff20e98a
+Content-Type: application/json
+
